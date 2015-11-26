@@ -24,6 +24,8 @@ gem 'haml-rails'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+# FactoryGirl
+gem "factory_girl_rails", "~> 4.0"
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -31,7 +33,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'rspec'
   gem 'rspec-rails'
+  gem 'shoulda'
+  gem 'shoulda-matchers'
 end
 
 group :development do
