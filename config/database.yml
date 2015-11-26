@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: user_tracker_development
+  host: localhost
+  pool: 5
+  username: postgres
+  password: postgres
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: user_tracker_test
+  host: localhost
+  pool: 5
+  username: postgres
+  password: postgres
+  min_messages: WARNING
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: user_tracker_production
+  pool: 5
+  username: postgres
+  password: postgres
