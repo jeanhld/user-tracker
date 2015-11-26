@@ -26,6 +26,8 @@ gem "less-rails"
 gem "twitter-bootstrap-rails"
 # FactoryGirl
 gem "factory_girl_rails", "~> 4.0"
+# Pagination
+gem 'will_paginate', '~> 3.0.6'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
