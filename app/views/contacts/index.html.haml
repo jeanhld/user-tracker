@@ -3,6 +3,7 @@
 %br
 .list-group
   - @contacts.each do |contact|
-    = link_to contact.email, contact_path(contact.id), class: 'list-group-item'
+    = link_to "Email: #{contact.email}",
+      contact_path(contact.id), class: 'list-group-item'
 
 = will_paginate @contacts

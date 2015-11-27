@@ -1,3 +1,19 @@
 %h2
-  Last accessed pages by: 
-  = @contact.email
+  Last accessed pages by
+  %strong= @contact.email
+- unless @visited_pages.blank?
+  %h4
+    %strong Last Activity:
+    = @last_activity.strftime("%d/%m/%Y - %H:%M:%S")
+  %br
+  .list-group
+    - @visited_pages.each do |visited_page|
+      .list-group-item
+        %h3
+          %strong Page:
+          = visited_page.page
+          %strong Accessed at:
+          = visited_page.created_at.strftime("%d/%m/%Y - %H:%M:%S")
+- else
+  %br
+  %h3 None visited page..

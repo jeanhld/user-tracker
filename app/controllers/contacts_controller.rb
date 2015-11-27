@@ -7,5 +7,7 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find_by(id: params[:id])
+    @visited_pages = @contact.visited_pages
+    @last_activity = @contact.visited_pages.last.created_at unless @contact.visited_pages.blank?
   end
 end
