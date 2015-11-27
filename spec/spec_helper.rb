@@ -1,4 +1,6 @@
 require 'simplecov'
+require 'database_cleaner'
+
 SimpleCov.start 'rails'
 
 ENV["RAILS_ENV"] ||= 'test'
@@ -9,6 +11,9 @@ require 'shoulda/matchers/integrations/rspec'
 
 ActiveRecord::Migration.maintain_test_schema!
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean
 
 RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
