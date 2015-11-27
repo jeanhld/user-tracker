@@ -3,6 +3,10 @@ require 'spec_helper'
 describe Contact do
   let(:contact) { FactoryGirl.build :contact }
 
+  describe 'relationships' do
+    it { should have_many(:visited_pages) }
+  end
+
   describe 'validations' do
     it { should validate_presence_of :email }
 
