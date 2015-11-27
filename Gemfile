@@ -24,8 +24,6 @@ gem 'haml-rails'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
-# FactoryGirl
-gem "factory_girl_rails", "~> 4.0"
 # Pagination
 gem 'will_paginate', '~> 3.0.6'
 
@@ -36,9 +34,15 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'rspec'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.14.2'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'capybara'
   gem 'shoulda'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '~> 2.6.0'
+  gem 'simplecov'
 end
 
 group :development do
