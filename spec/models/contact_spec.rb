@@ -4,11 +4,14 @@ describe Contact do
   let(:contact) { FactoryGirl.build :contact }
 
   describe 'relationships' do
-    it { should have_many(:visited_pages) }
+    it { should have_many(:visited_pages).through(:visitor) }
+    it { should belong_to(:visitor) }
   end
 
   describe 'validations' do
     it { should validate_presence_of :email }
+    it { should validate_presence_of :visitor }
+    it { should validate_uniqueness_of :email }
 
     describe 'email' do
       context 'invalid format' do

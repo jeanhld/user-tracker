@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126223509) do
+ActiveRecord::Schema.define(version: 20151127170328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,17 +21,15 @@ ActiveRecord::Schema.define(version: 20151126223509) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "visitor_id"
   end
 
   create_table "visited_pages", force: :cascade do |t|
     t.integer  "page"
-    t.integer  "guest_id"
-    t.string   "guest_type"
+    t.integer  "visitor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "visited_pages", ["guest_type", "guest_id"], name: "index_visited_pages_on_guest_type_and_guest_id", using: :btree
 
   create_table "visitors", force: :cascade do |t|
     t.string   "identifier"

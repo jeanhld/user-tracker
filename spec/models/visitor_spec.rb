@@ -4,6 +4,7 @@ describe Visitor do
 
   describe 'relationships' do
     it { should have_many :visited_pages }
+    it { should have_one :contact }
   end
 
   describe 'validations' do
