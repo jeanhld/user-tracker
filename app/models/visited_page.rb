@@ -4,6 +4,5 @@ class VisitedPage < ActiveRecord::Base
   enum page: [ :home, :about, :prices, :contact ]
 
   # Validations
-  validates :page, :presence => true
-  validates :visitor, :presence => true
+  validates :page, :accessed_at, :visitor, :presence => true
 end

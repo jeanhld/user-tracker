@@ -8,5 +8,6 @@ describe VisitedPage do
   describe 'validations' do
     it { should validate_presence_of :page }
     it { should validate_presence_of :visitor }
+    it { should validate_presence_of :accessed_at }
   end
 end
