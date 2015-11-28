@@ -1,9 +1,9 @@
 %h2
-  Recent Visitants:
+  Recent Contacts:
 %br
 .list-group
   - @contacts.each do |contact|
     = link_to "Email: #{contact.email}",
-      contact_path(contact.id), class: 'list-group-item'
+      visitor_contact_path(contact.visitor.id, contact.id), class: 'list-group-item'
 
 = will_paginate @contacts

@@ -1,8 +1,9 @@
 %h2
   Last accessed pages by
   %strong= @contact.email
+%hr
 - unless @visited_pages.blank?
-  %h4
+  %h5
     %strong Last Activity:
     = @last_activity.strftime("%d/%m/%Y - %H:%M:%S")
   %br
