@@ -10,11 +10,12 @@
   .list-group
     - @visited_pages.each do |visited_page|
       .list-group-item
-        %h3
+        %h4
           %strong Page:
-          = visited_page.page
+          = visited_page.page.capitalize
+        %h5
           %strong Accessed at:
-          = visited_page.created_at.strftime("%d/%m/%Y - %H:%M:%S")
+          = visited_page.accessed_at.strftime("%d/%m/%Y - %H:%M:%S")
 - else
   %br
   %h3 None visited page..
