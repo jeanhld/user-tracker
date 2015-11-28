@@ -17,10 +17,11 @@ Things you may want to cover to run this app on localhost:
 * Database installation
   - Fourth Step: To create the databases, run 'rake db:create'.
   - Fifth Step: Run 'rake db:migrate' to run the database migrations.
+  - Sixth Step: Run 'rake db:seed' if you want a initial example data.
 
 * How to run the server
-  - Sixth Step: With the above steps completed, run 'rails server'.
-  - Seventh Step: Access the app on your browser on 'localhost:3000'
+  - Seventh Step: With the above steps completed, run 'rails server'.
+  - Eighth Step: Access the app on your browser on 'localhost:3000'
 
 * How to run the test suite
   - Run 'bundle exec rspec' on your terminal.
