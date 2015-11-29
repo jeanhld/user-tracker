@@ -5,6 +5,11 @@ class VisitedPagesController < ApplicationController
     params[:visited_page] &&= visited_page_params
   end
 
+  def index
+    @last_visited_pages = VisitedPage.includes(visitor: :contact).order("accessed_at desc")
+    @last_visited_pages = @last_visited_pages.paginate(:page => params[:page], :per_page => 10)
+  end
+
   def create
     @visitor = Visitor.find_or_create_by(identifier: params[:visitor_id])
     @visited_page = VisitedPage.new(visited_page_params)

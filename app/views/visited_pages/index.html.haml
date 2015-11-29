@@ -1,0 +1,19 @@
+%h2
+  Last Visited Pages:
+%br
+.list-group
+  - @last_visited_pages.each do |visited_page|
+    .list-group-item
+      %h5
+        %strong Page:
+        = visited_page.page
+        %strong Visitor:
+        - if visited_page.visitor.contact.blank?
+          = "Unknown Visitor - Identifier (#{visited_page.visitor.identifier})"
+        - else
+          = visited_page.visitor.contact.email
+      %h6
+        %strong Accessed At:
+        = visited_page.accessed_at
+
+= will_paginate @last_visited_pages

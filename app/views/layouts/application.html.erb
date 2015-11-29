@@ -19,6 +19,9 @@
           <li class="<%= controller.class == ContactsController and controller.action_name == 'index' ? 'active' : '' %>">
             <%= link_to "Contacts", root_path %>
           </li>
+          <li class="<%= controller.class == VisitedPagesController and controller.action_name == 'index' ? 'active' : '' %>">
+            <%= link_to "Last Visited Pages", visited_pages_path %>
+          </li>
         </ul>
       </div>
     </div>
