@@ -1,5 +1,6 @@
 # encoding: utf-8
 class VisitedPagesController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   prepend_before_filter do
     params[:visited_page] &&= visited_page_params
   end
