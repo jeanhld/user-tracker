@@ -13,6 +13,7 @@ class ContactsController < ApplicationController
   def show
     @contact = Contact.find_by(id: params[:id])
     @visited_pages = @contact.visited_pages
+    @visited_pages = @visited_pages.paginate(:page => params[:page], :per_page => 10)
     @last_activity = @contact.last_activity
   end
 

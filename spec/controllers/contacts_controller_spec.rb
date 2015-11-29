@@ -21,7 +21,7 @@ describe ContactsController do
     let(:params) {{ visitor_id: 'any-id', id: 'any' }}
     before do
       Contact.stub(:find_by) { contact }
-      contact.stub(:visited_pages) { [visited_page, visited_page2] }
+      contact.stub_chain(:visited_pages, :paginate) { [visited_page, visited_page2] }
       contact.stub(:last_activity) { visited_page2.created_at }
     end
 
