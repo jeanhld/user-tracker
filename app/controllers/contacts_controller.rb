@@ -1,5 +1,6 @@
 # encoding: utf-8
 class ContactsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :only => :create
   prepend_before_filter do
     params[:contact] &&= contact_params
   end
